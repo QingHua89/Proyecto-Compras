@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" 
+targetNamespace="t4is.uv.mx/dependenciaN"
+xmlns:tns="t4is.uv.mx/dependenciaN" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="SolicitarCompraRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombreDependencia" type="xs:string" />
+        <xs:element name="detalleCompra" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="SolicitarCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mensaje" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

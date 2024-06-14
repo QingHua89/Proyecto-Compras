@@ -1,0 +1,226 @@
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://tempuri.org/" name="IFacturaService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:element name="GetAllFacturas">
+        <xsd:complexType/>
+      </xsd:element>
+      <xsd:element name="GetAllFacturasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="GetAllFacturasResult" nillable="true" type="tns:ArrayOfFactura"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetFacturaById">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="id" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetFacturaByIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="GetFacturaByIdResult" type="tns:Factura"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateFactura">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="factura" type="tns:Factura"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateFacturaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="CreateFacturaResult" type="tns:Factura"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateFactura">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="factura" type="tns:Factura"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateFacturaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="UpdateFacturaResult" type="tns:Factura"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteFactura">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="id" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteFacturaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="DeleteFacturaResult" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfFactura">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" nillable="true" name="Factura" type="tns:Factura"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Factura">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Id" type="xsd:int"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Version" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Serie" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Folio" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Fecha" type="xsd:dateTime"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Sello" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="FormaPago" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NoCertificado" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Certificado" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CondicionesDePago" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="SubTotal" type="xsd:decimal"/>
+          <xsd:element nillable="true" minOccurs="1" maxOccurs="1" name="Descuento" type="xsd:decimal"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Moneda" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Total" type="xsd:decimal"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="TipoDeComprobante" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Exportacion" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MetodoPago" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="LugarExpedicion" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RfcEmisor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NombreEmisor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RegimenFiscalEmisor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RfcReceptor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NombreReceptor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="DomicilioFiscalReceptor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RegimenFiscalReceptor" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="UsoCFDI" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ObjetoImp" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ClaveProdServ" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Cantidad" type="xsd:decimal"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ClaveUnidad" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Unidad" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Descripcion" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="ValorUnitario" type="xsd:decimal"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Importe" type="xsd:decimal"/>
+          <xsd:element nillable="true" minOccurs="1" maxOccurs="1" name="DescuentoConcepto" type="xsd:decimal"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="BaseTraslado" type="xsd:decimal"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Impuesto" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="TipoFactor" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="TasaOCuota" type="xsd:decimal"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="ImporteTraslado" type="xsd:decimal"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFacturaService_GetAllFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFacturas"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_GetAllFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFacturasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_GetFacturaById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacturaById"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_GetFacturaById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacturaByIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_CreateFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFactura"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_CreateFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFacturaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_UpdateFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFactura"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_UpdateFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFacturaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_DeleteFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFactura"/>
+  </wsdl:message>
+  <wsdl:message name="IFacturaService_DeleteFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFacturaResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IFacturaService">
+    <wsdl:operation name="GetAllFacturas">
+      <wsdl:input message="tns:IFacturaService_GetAllFacturas_InputMessage"/>
+      <wsdl:output message="tns:IFacturaService_GetAllFacturas_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacturaById">
+      <wsdl:input message="tns:IFacturaService_GetFacturaById_InputMessage"/>
+      <wsdl:output message="tns:IFacturaService_GetFacturaById_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFactura">
+      <wsdl:input message="tns:IFacturaService_CreateFactura_InputMessage"/>
+      <wsdl:output message="tns:IFacturaService_CreateFactura_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFactura">
+      <wsdl:input message="tns:IFacturaService_UpdateFactura_InputMessage"/>
+      <wsdl:output message="tns:IFacturaService_UpdateFactura_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFactura">
+      <wsdl:input message="tns:IFacturaService_DeleteFactura_InputMessage"/>
+      <wsdl:output message="tns:IFacturaService_DeleteFactura_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFacturaService_soap" type="tns:IFacturaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAllFacturas">
+      <soap:operation soapAction="http://tempuri.org/IFacturaService/GetAllFacturas" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacturaById">
+      <soap:operation soapAction="http://tempuri.org/IFacturaService/GetFacturaById" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFactura">
+      <soap:operation soapAction="http://tempuri.org/IFacturaService/CreateFactura" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFactura">
+      <soap:operation soapAction="http://tempuri.org/IFacturaService/UpdateFactura" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFactura">
+      <soap:operation soapAction="http://tempuri.org/IFacturaService/DeleteFactura" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IFacturaService">
+    <wsdl:port name="BasicHttpBinding_IFacturaService_soap" binding="tns:BasicHttpBinding_IFacturaService_soap">
+      <soap:address location="http://localhost:5321/Facturas.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="t4is.uv.mx/compras" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://t4is.uv.mx/compras" targetNamespace="https://t4is.uv.mx/compras">
+  <wsdl:types>
+    <xs:schema xmlns:tns="t4is.uv.mx/compras" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="t4is.uv.mx/compras">
+
+  <xs:element name="RegistrarCompraRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detalleCompra" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RegistrarCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mensaje" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearPresupuestoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detallePresupuesto" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CrearPresupuestoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarPresupuestoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idPresupuesto" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarPresupuestoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="presupuesto" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarPresupuestoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idPresupuesto" type="xs:int"/>
+        <xs:element name="detallePresupuesto" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarPresupuestoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CrearFacturaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detalleFactura" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CrearFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarFacturaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idFactura" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="factura" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarFacturaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idFactura" type="xs:int"/>
+        <xs:element name="detalleFactura" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearPresupuestoRequest">
+    <wsdl:part element="sch:CrearPresupuestoRequest" name="CrearPresupuestoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CrearFacturaRequest">
+    <wsdl:part element="sch:CrearFacturaRequest" name="CrearFacturaRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarFacturaRequest">
+    <wsdl:part element="sch:ConsultarFacturaRequest" name="ConsultarFacturaRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegistrarCompraRequest">
+    <wsdl:part element="sch:RegistrarCompraRequest" name="RegistrarCompraRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CrearFacturaResponse">
+    <wsdl:part element="sch:CrearFacturaResponse" name="CrearFacturaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegistrarCompraResponse">
+    <wsdl:part element="sch:RegistrarCompraResponse" name="RegistrarCompraResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarFacturaResponse">
+    <wsdl:part element="sch:ConsultarFacturaResponse" name="ConsultarFacturaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActualizarFacturaResponse">
+    <wsdl:part element="sch:ActualizarFacturaResponse" name="ActualizarFacturaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CrearPresupuestoResponse">
+    <wsdl:part element="sch:CrearPresupuestoResponse" name="CrearPresupuestoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarPresupuestoRequest">
+    <wsdl:part element="sch:ConsultarPresupuestoRequest" name="ConsultarPresupuestoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActualizarPresupuestoResponse">
+    <wsdl:part element="sch:ActualizarPresupuestoResponse" name="ActualizarPresupuestoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActualizarPresupuestoRequest">
+    <wsdl:part element="sch:ActualizarPresupuestoRequest" name="ActualizarPresupuestoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActualizarFacturaRequest">
+    <wsdl:part element="sch:ActualizarFacturaRequest" name="ActualizarFacturaRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarPresupuestoResponse">
+    <wsdl:part element="sch:ConsultarPresupuestoResponse" name="ConsultarPresupuestoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="comprasPort">
+    <wsdl:operation name="CrearPresupuesto">
+      <wsdl:input message="tns:CrearPresupuestoRequest" name="CrearPresupuestoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:CrearPresupuestoResponse" name="CrearPresupuestoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearFactura">
+      <wsdl:input message="tns:CrearFacturaRequest" name="CrearFacturaRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:CrearFacturaResponse" name="CrearFacturaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFactura">
+      <wsdl:input message="tns:ConsultarFacturaRequest" name="ConsultarFacturaRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ConsultarFacturaResponse" name="ConsultarFacturaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCompra">
+      <wsdl:input message="tns:RegistrarCompraRequest" name="RegistrarCompraRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:RegistrarCompraResponse" name="RegistrarCompraResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarFactura">
+      <wsdl:input message="tns:ActualizarFacturaRequest" name="ActualizarFacturaRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ActualizarFacturaResponse" name="ActualizarFacturaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPresupuesto">
+      <wsdl:input message="tns:ConsultarPresupuestoRequest" name="ConsultarPresupuestoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ConsultarPresupuestoResponse" name="ConsultarPresupuestoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPresupuesto">
+      <wsdl:input message="tns:ActualizarPresupuestoRequest" name="ActualizarPresupuestoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ActualizarPresupuestoResponse" name="ActualizarPresupuestoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="comprasPortSoap11" type="tns:comprasPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CrearPresupuesto">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="CrearPresupuestoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearPresupuestoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearFactura">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="CrearFacturaRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CrearFacturaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFactura">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ConsultarFacturaRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarFacturaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCompra">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RegistrarCompraRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RegistrarCompraResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarFactura">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ActualizarFacturaRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ActualizarFacturaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPresupuesto">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ConsultarPresupuestoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultarPresupuestoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPresupuesto">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ActualizarPresupuestoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ActualizarPresupuestoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="comprasPortService">
+    <wsdl:port binding="tns:comprasPortSoap11" name="comprasPortSoap11">
+      <soap:address location="/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

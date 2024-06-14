@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" 
+targetNamespace="t4is.uv.mx/compras"
+xmlns:tns="t4is.uv.mx/compras" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="RegistrarCompraRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detalleCompra" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RegistrarCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="mensaje" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearPresupuestoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detallePresupuesto" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CrearPresupuestoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarPresupuestoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idPresupuesto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarPresupuestoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="presupuesto" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarPresupuestoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idPresupuesto" type="xs:int" />
+        <xs:element name="detallePresupuesto" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarPresupuestoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CrearFacturaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detalleFactura" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CrearFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarFacturaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idFactura" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="factura" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarFacturaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idFactura" type="xs:int" />
+        <xs:element name="detalleFactura" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ActualizarFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resultado" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
